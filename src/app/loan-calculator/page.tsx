@@ -1358,7 +1358,7 @@ export default function LoanCalculatorPage() {
               >
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-sky-600 dark:text-sky-300" />
-                  <p className={cx("font-semibold", strong)}>AI Repayment</p>
+                  <p className={cx("font-semibold", strong)}>AI Repayment </p>
                 </div>
                 <ChevronDown
                   className={cx(
