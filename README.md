@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎓 KlassFin - Next.js Education Loan Platform
 
 India's #1 Education Loan Marketplace built with Next.js 14, Framer Motion, and Tailwind CSS.
@@ -167,3 +168,5 @@ NEXT_PUBLIC_SITE_URL=https://klassfin.com
 ---
 
 Built with ❤️ for KlassFin | Making study abroad dreams possible
+=======
+# Klassfin.com
