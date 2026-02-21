@@ -33,7 +33,7 @@ const floatingElements = [
 
 const stats = [
   { value: "5000+", label: "Students Helped", icon: Star },
-  { value: "₹500Cr+", label: "Loans Disbursed", icon: TrendingUp },
+  { value: "500Cr+", label: "Loans Disbursed", icon: TrendingUp },
   { value: "15+", label: "Partner Banks", icon: Shield },
   { value: "100%", label: "Free Service", icon: Sparkles },
 ];
@@ -387,7 +387,7 @@ function LiveEducationDashboard({ compact = true }: { compact?: boolean }) {
                          bg-white/50 dark:bg-white/6
                          text-slate-700 dark:text-white/75"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-emerald-700 animate-pulse" />
               Realtime
             </span>
           </div>
@@ -704,12 +704,12 @@ export default function HeroSection() {
             >
               <Sparkles className="w-4 h-4 text-sky-400" />
               <span
-                className="text-sm text-slate-700 dark:text-white/80"
+                className="text-sm text-slate-800 dark:text-white/80"
                 style={{ fontFamily: "DM Sans, sans-serif" }}
               >
                 India&apos;s #Top Education Loan Marketplace
               </span>
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
             </motion.div>
 
             <motion.h1
@@ -719,13 +719,13 @@ export default function HeroSection() {
               className="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.02] mb-5 text-slate-900 dark:text-white"
               style={{ fontFamily: "Syne, sans-serif" }}
             >
-              <span>Fund Your</span>
+              <span>Found Your</span>
               <br />
               <span className="bg-gradient-to-r from-sky-400 via-sky-300 to-purple-400 bg-clip-text text-transparent">
                 Dream
               </span>
               <br />
-              <span>Abroad</span>
+              <span>Abroad.</span>
             </motion.h1>
 
             <motion.p
@@ -739,8 +739,10 @@ export default function HeroSection() {
               <span className="text-sky-500 dark:text-sky-300 font-semibold">
                 KlassFin
               </span>
-              . Compare offers from top banks &amp; NBFCs and secure your future
-              today.
+              . Compare offers from top banks &amp; NBFCs- secure your{" "}
+              <span className="text-sky-500 dark:text-sky-300 font-semibold">
+                Future.
+              </span>
             </motion.p>
 
             <motion.div
@@ -776,7 +778,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.45 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto lg:mx-0"
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto lg:mx-0 font-semibold"
             >
               {stats.map((stat, i) => (
                 <motion.div
@@ -790,7 +792,7 @@ export default function HeroSection() {
                   <stat.icon className="w-5 h-5 text-sky-500 dark:text-sky-300 mx-auto lg:mx-0 mb-2" />
                   <div
                     className="text-xl font-extrabold bg-gradient-to-r from-sky-500 to-purple-400 bg-clip-text text-transparent"
-                    style={{ fontFamily: "Syne, sans-serif" }}
+                    style={{ fontFamily: "Arial" }}
                   >
                     {stat.value}
                   </div>
@@ -809,7 +811,7 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="relative w-full mx-auto lg:justify-self-end"
           >
-            {/* ✅ This makes it smaller like your second screenshot */}
+            {/*  This makes it smaller like your second screenshot */}
             <div className="origin-top-right lg:scale-[0.66] xl:scale-[0.78] 2xl:scale-[0.82]">
               <div className="max-w-[560px]">
                 <LiveEducationDashboard compact />

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   --font-display: 'Syne', sans-serif;
@@ -331,5 +330,21 @@ body {
   }
   .font-mono {
     font-family: var(--font-mono);
+  }
+}
+@layer base {
+  :root {
+    --font-display: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    --font-body: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+  }
+
+  html, body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-weight: 800;
+    letter-spacing: -0.02em;
   }
 }

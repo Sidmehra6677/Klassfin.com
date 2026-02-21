@@ -83,7 +83,7 @@ export default function WhyKlassFin() {
   return (
     <section
       ref={ref}
-      className="relative pt-20 pb-25 section-glow overflow-hidden"
+      className="relative pt-10 sm:pt-10 pb-20 section-glow overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-sky-400/3 to-transparent pointer-events-none" />
