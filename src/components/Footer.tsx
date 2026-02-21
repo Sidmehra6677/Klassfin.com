@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -10,7 +11,7 @@ import {
   Linkedin,
   Instagram,
   Youtube,
-  ArrowUpRight,
+  ArrowRight,
 } from "lucide-react";
 
 const footerLinks = {
@@ -26,12 +27,32 @@ const footerLinks = {
     { label: "Terms & Conditions", href: "/terms-and-conditions" },
   ],
   Countries: [
-    { label: "🇺🇸 USA", href: "/college-list/US" },
-    { label: "🇨🇦 Canada", href: "/college-list/CA" },
-    { label: "🇬🇧 UK", href: "/college-list/UK" },
-    { label: "🇩🇪 Germany", href: "/college-list/DE" },
-    { label: "🇦🇺 Australia", href: "/college-list/AU" },
-    { label: "🇮🇪 Ireland", href: "/college-list/IE" },
+    { label: "USA", href: "/college-list/US", flag: "/images/flags/us.png" },
+    {
+      label: "Canada",
+      href: "/college-list/CA",
+      flag: "/images/flags/canada.png",
+    },
+    {
+      label: "UK",
+      href: "/college-list/UK",
+      flag: "/images/flags/united-kingdom.png",
+    },
+    {
+      label: "Germany",
+      href: "/college-list/DE",
+      flag: "/images/flags/germany.png",
+    },
+    {
+      label: "Australia",
+      href: "/college-list/AU",
+      flag: "/images/flags/australia.png",
+    },
+    {
+      label: "Ireland",
+      href: "/college-list/IE",
+      flag: "/images/flags/ireland.png",
+    },
   ],
 };
 
@@ -44,29 +65,25 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[var(--card)] text-[color:var(--text)] border-t border-[color:var(--border)] overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-sky-400/5 blur-[100px] rounded-full pointer-events-none" />
-
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 py-6">
-        {/* Top section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-8">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-4 w-fit">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-400 to-purple-500 flex items-center justify-center">
+    <footer className="relative overflow-hidden border-t border-black/5 dark:border-white/10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+        <div className="grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <Link href="/" className="flex items-center gap-3 w-fit">
+              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-400 to-purple-500 flex items-center justify-center shadow-sm">
                 <GraduationCap className="w-6 h-6 text-white" />
               </div>
               <span
-                className="font-display font-bold text-xl gradient-text"
-                style={{ fontFamily: "Syne, sans-serif" }}
+                className="text-xl font-bold bg-gradient-to-r from-sky-500 to-purple-500 bg-clip-text text-transparent"
+                style={{ fontFamily: "Arial" }}
               >
                 KlassFin
               </span>
             </Link>
+
             <p
-              className="text-[color:var(--muted)] text-sm leading-relaxed mb-4 max-w-xs"
-              style={{ fontFamily: "DM Sans, sans-serif" }}
+              className="mt-5 max-w-sm text-sm leading-relaxed text-slate-700 dark:text-slate-400"
+              style={{ fontFamily: "Arial" }}
             >
               KlassFin is a leading-edge company operating at the intersection
               of education and finance technologies, providing comprehensive and
@@ -74,36 +91,21 @@ export default function Footer() {
               education opportunities abroad.
             </p>
 
-            {/* Contact */}
-            <div className="space-y-3">
-              <a
-                href="tel:+917678250373"
-                className="flex items-center gap-3 text-sm text-[color:var(--muted)] hover:text-[var(--sky)] transition-colors"
-              >
-                <Phone className="w-4 h-4 text-sky-400" />
-                +91-76782-50373
-              </a>
-              <a
-                href="mailto:contact@klassfin.com"
-                className="flex items-center gap-3 text-sm text-[color:var(--muted)] hover:text-[var(--sky)] transition-colors"
-              >
-                <Mail className="w-4 h-4 text-sky-400" />
-                contact@klassfin.com
-              </a>
-              <div className="flex items-center gap-3 text-sm text-slate-400">
-                <MapPin className="w-4 h-4 text-sky-400 flex-shrink-0" />
-                India (Serving students worldwide)
-              </div>
-            </div>
-
             {/* Socials */}
-            <div className="flex items-center gap-3 mt-6">
+            <div className="mt-7 flex items-center gap-3">
               {socials.map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  whileHover={{ y: -2, scale: 1.1 }}
-                  className="w-9 h-9 glass rounded-xl flex items-center justify-center text-slate-400 hover:text-sky-400 transition-colors"
+                  whileHover={{ y: -2, scale: 1.06 }}
+                  className="
+                    w-10 h-10 rounded-2xl flex items-center justify-center
+                    border border-black/5 bg-white/60 text-slate-600
+                    hover:text-sky-600 hover:border-sky-400/40
+                    dark:border-white/10 dark:bg-white/5 dark:text-slate-300
+                    dark:hover:text-sky-300 dark:hover:border-sky-300/40
+                    backdrop-blur transition-colors
+                  "
                   aria-label={social.label}
                 >
                   <social.icon className="w-4 h-4" />
@@ -112,49 +114,148 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links */}
-          {Object.entries(footerLinks).map(([section, links]) => (
-            <div key={section}>
-              <h3
-                className="text-[color:var(--heading)] font-semibold text-sm mb-4 uppercase tracking-wider"
-                style={{ fontFamily: "Syne, sans-serif" }}
-              >
-                {section}
-              </h3>
-              <ul className="space-y-2">
-                {links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-[color:var(--muted)] hover:text-[var(--sky)] text-sm transition-colors ..."
-                      style={{ fontFamily: "DM Sans, sans-serif" }}
-                    >
-                      {link.label}
-                      <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          {/* Quick Links (Company) */}
+          <div className="lg:col-span-2">
+            <h3
+              className="text-sm font-semibold tracking-wide text-slate-900 dark:text-white"
+              style={{ fontFamily: "Arial" }}
+            >
+              Quick Links
+            </h3>
+            <ul className="mt-5 space-y-1">
+              {footerLinks.Company.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="group inline-flex items-center gap-2 text-sm text-slate-600 hover:text-sky-600 dark:text-slate-300 dark:hover:text-sky-300 transition-colors"
+                    style={{ fontFamily: "Arial" }}
+                  >
+                    {link.label}
+                    <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div className="lg:col-span-2">
+            <h3
+              className="text-sm font-semibold tracking-wide text-slate-900 dark:text-white"
+              style={{ fontFamily: "Arial" }}
+            >
+              Legal
+            </h3>
+            <ul className="mt-5 space-y-1">
+              {footerLinks.Legal.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="group inline-flex items-center gap-2 text-sm text-slate-600 hover:text-sky-600 dark:text-slate-300 dark:hover:text-sky-300 transition-colors"
+                    style={{ fontFamily: "Arial" }}
+                  >
+                    {link.label}
+                    <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Countries */}
+          <div className="lg:col-span-2">
+            <h3
+              className="text-sm font-semibold tracking-wide text-slate-900 dark:text-white"
+              style={{ fontFamily: "Arial" }}
+            >
+              Countries
+            </h3>
+            <ul className="mt-3 space-y-1">
+              {footerLinks.Countries.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="inline-flex items-center gap-3 text-sm text-slate-600 hover:text-sky-600 dark:text-slate-300 dark:hover:text-sky-300 transition-colors"
+                    style={{ fontFamily: "Arial" }}
+                  >
+                    {/* FLAG PNG */}
+                    <img
+                      src={link.flag}
+                      alt={`${link.label} flag`}
+                      className="h-5 w-5 rounded-sm object-cover ring-1 ring-black/10 dark:ring-white/10"
+                      loading="lazy"
+                    />
+                    <span>{link.label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-2">
+            <h3
+              className="text-sm font-semibold tracking-wide text-slate-900 dark:text-white"
+              style={{ fontFamily: "Arial" }}
+            >
+              Contact Us
+            </h3>
+
+            <div className="mt-5 space-y-3 text-sm text-slate-600 dark:text-slate-300">
+              <div className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-sky-500" />
+                <span style={{ fontFamily: "Arial" }}>+91-76782-50373</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-sky-500" />
+                <span style={{ fontFamily: "Arial" }}>
+                  contact@klassfin.com
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <MapPin className="w-4 h-4 text-sky-500" />
+                <span style={{ fontFamily: "Arial" }}>
+                  India (Serving students worldwide)
+                </span>
+              </div>
             </div>
-          ))}
+
+            <div className="mt-3 flex items-center overflow-hidden rounded-2xl border border-black/10 bg-white/60 backdrop-blur dark:border-white/10 dark:bg-white/5">
+              <input
+                type="email"
+                placeholder="Your email"
+                className="w-full bg-transparent px-4 py-3 text-sm text-slate-700 placeholder:text-slate-400 outline-none dark:text-slate-200 dark:placeholder:text-slate-400"
+                style={{ fontFamily: "Arial" }}
+              />
+              <button
+                type="button"
+                className="shrink-0 px-4 py-3 bg-gradient-to-r from-sky-500 to-purple-500 text-white"
+                aria-label="Subscribe"
+              >
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-sky-400/20 to-transparent my-4" />
+        <div className="mt-12 h-px bg-gradient-to-r from-transparent via-sky-400/25 to-transparent" />
 
-        {/* Bottom */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 items-center gap-4">
           <p
-            className="text-slate-500 text-sm"
-            style={{ fontFamily: "DM Sans, sans-serif" }}
+            className="text-center sm:col-start-2 sm:justify-self-center text-sm text-slate-600 dark:text-slate-300"
+            style={{ fontFamily: "Arial" }}
           >
-            © 2024 KlassFin Pvt Ltd. All rights reserved.
+            © 2026 KlassFin Pvt Ltd. All rights reserved
           </p>
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-slate-500 text-sm">
-              All systems operational
+
+          <div className="flex items-center justify-center sm:justify-self-end gap-2">
+            <span
+              className="text-sm text-slate-600 dark:text-slate-300"
+              style={{ fontFamily: "Arial" }}
+            >
+              Live
             </span>
+            <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
           </div>
         </div>
       </div>

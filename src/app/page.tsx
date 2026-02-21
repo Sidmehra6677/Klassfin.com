@@ -1,5 +1,6 @@
 import HeroSection from "@/components/sections/HeroSection";
 import WhyKlassFin from "@/components/sections/WhyKlassFin";
+import KlassFinVideo from "@/components/KlassFinVideo";
 import HowItWorks from "@/components/sections/HowItWorks";
 import PartnersSection from "@/components/sections/PartnersSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
@@ -11,6 +12,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <WhyKlassFin />
+      <KlassFinVideo />
       <HowItWorks />
       <LoanOfferingsSection />
       <PartnersSection />

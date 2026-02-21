@@ -39,8 +39,9 @@ const config: Config = {
       },
 
       fontFamily: {
-        display: ["var(--font-display)", "serif"],
-        body: ["var(--font-body)", "sans-serif"],
+        sans: ["Arial", "Helvetica", "sans-serif"],
+        display: ["Arial", "Helvetica", "sans-serif"],
+        body: ["Arial", "Helvetica", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
       },
 

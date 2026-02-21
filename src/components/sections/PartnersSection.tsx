@@ -80,19 +80,21 @@ export default function PartnersSection() {
           </p>
         </motion.div>
       </div>
-
-      {/* Marquee Row 2 (reverse) */}
-      <div className="relative overflow-hidden py-8">
+      <div className="relative overflow-hidden py-8 group">
         <div
-          className="absolute left-0 top-0 bottom-0 w-36 z-10 pointer-events-none rounded-r-[60px]
-  bg-gradient-to-r from-sky-200/80 via-purple-200/40 to-transparent"
+          className="
+    absolute left-0 top-0 bottom-0 w-36 z-10 pointer-events-none rounded-r-[60px]
+    bg-gradient-to-r from-sky-200/80 via-purple-200/40 to-transparent
+    dark:from-slate-700/95 dark:via-slate-700/60 dark:to-transparent"
         />
         <div
-          className="absolute right-0 top-0 bottom-0 w-36 z-10 pointer-events-none rounded-l-[60px]
-  bg-gradient-to-l from-sky-200/80 via-purple-200/40 to-transparent"
+          className="
+    absolute right-0 top-0 bottom-0 w-36 z-10 pointer-events-none rounded-l-[60px]
+    bg-gradient-to-l from-sky-200/80 via-purple-200/40 to-transparent
+    dark:from-slate-700/95 dark:via-slate-700/60 dark:to-transparent"
         />
 
-        <div className="flex gap-4 animate-marquee-reverse">
+        <div className="flex w-max gap-4 animate-marquee will-change-transform group-hover:[animation-play-state:paused]">
           {[...partners.slice(5), ...partners, ...partners.slice(0, 5)].map(
             (partner, i) => (
               <PartnerCard key={i} partner={partner} />

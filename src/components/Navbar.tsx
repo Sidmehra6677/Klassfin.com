@@ -24,14 +24,42 @@ const navLinks = [
     href: "/college-list",
     icon: Globe2,
     submenu: [
-      { label: "🇺🇸 USA", href: "/college-list/US" },
-      { label: "🇨🇦 Canada", href: "/college-list/CA" },
-      { label: "🇬🇧 UK", href: "/college-list/UK" },
-      { label: "🇩🇪 Germany", href: "/college-list/DE" },
-      { label: "🇦🇺 Australia", href: "/college-list/AU" },
-      { label: "🇮🇪 Ireland", href: "/college-list/IE" },
-      { label: "🇫🇷 France", href: "/college-list/FR" },
-      { label: "🇮🇹 Italy", href: "/college-list/IT" },
+      { label: "USA", href: "/college-list/US", flag: "/images/flags/us.png" },
+      {
+        label: "Canada",
+        href: "/college-list/CA",
+        flag: "/images/flags/canada.png",
+      },
+      {
+        label: "UK",
+        href: "/college-list/UK",
+        flag: "/images/flags/united-kingdom.png",
+      },
+      {
+        label: "Germany",
+        href: "/college-list/DE",
+        flag: "/images/flags/germany.png",
+      },
+      {
+        label: "Australia",
+        href: "/college-list/AU",
+        flag: "/images/flags/australia.png",
+      },
+      {
+        label: "Ireland",
+        href: "/college-list/IE",
+        flag: "/images/flags/ireland.png",
+      },
+      {
+        label: "France",
+        href: "/college-list/FR",
+        flag: "/images/flags/france.png",
+      },
+      {
+        label: "Italy",
+        href: "/college-list/IT",
+        flag: "/images/flags/italy.png",
+      },
     ],
   },
   { label: "Loan Calculator", href: "/loan-calculator", icon: Calculator },
@@ -87,9 +115,7 @@ export default function Navbar() {
             <div
               key={link.href}
               className="relative"
-              onMouseEnter={() =>
-                link.submenu && setActiveDropdown(link.label)
-              }
+              onMouseEnter={() => link.submenu && setActiveDropdown(link.label)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <Link
@@ -121,9 +147,16 @@ export default function Navbar() {
                       <Link
                         key={sub.href}
                         href={sub.href}
-                        className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white hover:bg-sky-400/10 transition-all"
+                        className="flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white hover:bg-sky-400/10 transition-all"
                       >
-                        {sub.label}
+                        {"flag" in sub && sub.flag ? (
+                          <img
+                            src={sub.flag}
+                            alt={sub.label}
+                            className="w-6 h-4 rounded-[2px] object-cover shrink-0"
+                          />
+                        ) : null}
+                        <span>{sub.label}</span>
                       </Link>
                     ))}
                   </motion.div>
